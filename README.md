@@ -1,0 +1,2 @@
+# team
+Projekter egyetemi projekt
