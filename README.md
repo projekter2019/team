@@ -1,5 +1,7 @@
 # team
 Projekter egyetemi projekt
+
+
 A Projekter egy egyszerű, könnyen kezelhető projekt és munkaidő-nyilvántartó szoftver. A fő funkciója az egyes feladatokra fordított munkaidő nyilvántartása. Cél, hogy a munkaidő kezelés a lehető legkevesebb adminisztrációs terhet rója a fejlesztőkre. 
 Az idő rögzítése többféle módon történhet: munka közben stopperrel automatizálva rögzítve vagy utólag manuálisan berögzítve.  
 Megvalósítani kívánt funkciók:
