@@ -18,7 +18,7 @@ if (isset($_POST["Elkuld"])) {
 		if ($Execute) {
 			echo '<script>window.alert("Az új projekt elmentése sikerült!")</script>';
 			echo '<script>window.open("ProjektOlvas.php?id=Frissitett", "_self")</script>';
-			//Megnyitaja a masik oldalt, ami meg nincs kesz, ez listazza majd a meglevo projekteket
+			//Megnyitaja a masik oldalt, ami listazza majd a meglevo projekteket
 		}
 	}
 	else {
