@@ -1,6 +1,8 @@
 <html>
 <title>PROJEKTER</title>
-<body>
+<head>
+	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
+</head>
 <body>
 <h1 align=center>PROJEKTER</h1>
 <br>
