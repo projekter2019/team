@@ -25,7 +25,7 @@ input[type="Submit"]{
     float: right;
 }
 
-input[type="text"],textarea{
+input[type="text"],input[type="password"],textarea{
     font-family: Garamond,Georgia,Times,"Times New Roman",serif;
     border:1px solid;
     background-color: #d3d8ff;
