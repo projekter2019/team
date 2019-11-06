@@ -3,7 +3,7 @@
 #Open a connection to the MySQL database with the username, password and database name specified
 function openSQLConn(){
 	$conn = mysqli_connect("localhost", "penzkorh_proj", "Proj3ct3r", "penzkorh_projekter");
-	
+
 	//If the connection could not be established report accordingly
 	if (!$conn) {
 		echo "Error: Unable to connect to MySQL." . PHP_EOL;

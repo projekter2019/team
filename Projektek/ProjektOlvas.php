@@ -1,9 +1,15 @@
 <?php
 require_once("DB.php");
+if (isset($_POST["Vissza"])) {
+//	echo '<script>window.open("Fooldal.php?id=EzzelVisszalepunkaFooldalra", "_self")</script>';
+	echo '<script>window.open("http://localhost/Projekter/index.php?id=EzzelVisszalepunkaFooldalra", "_self")</script>';
+} elseif (isset($_POST["Rogzit"])) {
+	echo '<script>window.open("ProjektRogzit.php?id=UjProjektHozzaadasa", "_self")</script>';
+}
 
 ?>
-//Egy tablazatban kiirja a Projektek adatbazisban szereplo projekteket, illetve egy-egy gombot a szerkeszteshez
-//es a torleshez
+<!--Egy tablazatban kiirja a Projektek adatbazisban szereplo projekteket, illetve egy-egy gombot a szerkeszteshez-->
+<!--es a torleshez-->
 
 <!DOCTYPE>
 <html>
@@ -11,7 +17,6 @@ require_once("DB.php");
 	<title>Projektek megtekintése</title>
 <!--	<link rel="stylesheet" type="text/css" href="http://localhost/Projekter/Dizajn/projekterCSS.css">-->
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-
 </head>
 
 <body>
@@ -22,9 +27,9 @@ require_once("DB.php");
 		<th>Projekt név</th>
 		<th>A projekt rövid leírása</th>
 		<th>Megbízó</th>
-		<th>Határidő</th>
-		<th>Törlés</th>
-		<th>Szerkesztés</th>
+        <th width="120px">Határidő</th>
+        <th width="100px">Szerkesztés</th>
+        <th>Törlés</th>
 	</tr>
 
 	<?php
@@ -44,11 +49,16 @@ require_once("DB.php");
 			<td><?php echo $P_leiras?></td>
 			<td><?php echo $P_megrendelo?></td>
 			<td><?php echo $P_hatarido?></td>
-			<td> <a href="Szerkeszt.php?id=<?php echo $Id; ?>">Szerkesztés</a> </td> //meg nincs megirva
-			<td> <a href="Torol.php?id=<?php echo $Id; ?>">Törlés</a> </td> //meg nincs megirva
+			<td> <a href="ProjektSzerkeszt.php?id=<?php echo $Id; ?>">Szerkesztés</a> </td>
+			<td> <a href="Torol.php?id=--><?php //echo $Id; ?><!--">Törlés</a> </td> <!-- meg nincs megirva-->
 		</tr>
 	<?php } ?>
 </table>
+<div>
+    <form class="" action="ProjektOlvas.php" method="post">
+        <input type="submit" name="Vissza" value="Vissza a főoldalra">
+        <input type="submit" name="Rogzit" value="Új projekt hozzáadása"> <!-- Uj -->
+    </form>
 
 </body>
 

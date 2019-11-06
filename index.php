@@ -7,7 +7,7 @@
 <h1 align=center>PROJEKTER</h1>
 <br>
 <?php
-	//Gather all the usefull functions
+	//Gather all the useful functions
 	include("./security/encrypt.php");
 	include("./security/decrypt.php");
 	include("./inc/database_controller.php");
@@ -31,7 +31,7 @@
 		if($user_data !== FALSE){
 			
 			//Display Projects
-			include_once("./Projektek/ProjektOlvas.php")
+			include_once("./Projektek/ProjektOlvas.php");
 		}else{
 			print "username or password is incorrect";
 		}

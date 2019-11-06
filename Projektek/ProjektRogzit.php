@@ -1,5 +1,5 @@
 <?php
-require_once("DB.php"); //Egy kulon fajlba raktam a kapcsolodast, de persze ez csak nalam mukodik abban a formaban
+require_once("DB.php");
 if (isset($_POST["Elkuld"])) {
 	if (!empty($_POST["P_nev"]) && !empty($_POST["P_leiras"]) && !empty($_POST["P_megrendelo"])) {
 		$P_nev = $_POST["P_nev"];
@@ -24,18 +24,21 @@ if (isset($_POST["Elkuld"])) {
 	else {
 		echo '<script>window.alert("A projekt nevét, rövid leírását és a határidőt mindenképpen meg kell adni!")</script>';
 	}
-
+}elseif (isset($_POST["Megsem"])) {
+	echo '<script>window.open("ProjektOlvas.php?id=ValtozatlanLista", "_self")</script>';
 }
 ?>
 
-//Ez most csak annyit tud, hogy be lehet gepelni a nevet, rovid leirasat, a megrendelot es a hataridot
+<!--Ez most csak annyit tud, hogy be lehet gepelni a nevet, rovid leirasat, a megrendelot es a hataridot-->
 
 <!DOCTYPE>
 <html>
 <head>
 	<title>Projekt hozzáadása</title>
 <!--	<link rel="stylesheet" type="text/css" href="http://localhost/Projekter/Dizajn/projekterCSS.css">-->
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
+<!--	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">-->
+    <link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
+
 </head>
 
 <body>
@@ -58,12 +61,12 @@ if (isset($_POST["Elkuld"])) {
 			<input type="date" name="P_hatarido" value="">
 			<br>
 			<input type="submit" name="Elkuld", value="Adatok elküldése">
-		</fieldset>
+            <input type="submit" name="Megsem", value="Mégsem">
+        </fieldset>
 	</form>
 </div>
 
 </body>
-
 
 </html>
 
