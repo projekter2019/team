@@ -1,8 +1,7 @@
 <?php
 require_once("DB.php");
 if (isset($_POST["Vissza"])) {
-//	echo '<script>window.open("Fooldal.php?id=EzzelVisszalepunkaFooldalra", "_self")</script>';
-	echo '<script>window.open("http://localhost/Projekter/index.php?id=EzzelVisszalepunkaFooldalra", "_self")</script>';
+	echo '<script>window.open("../index.php", "_self")</script>'; //Ez miert nem mukodik?
 } elseif (isset($_POST["Rogzit"])) {
 	echo '<script>window.open("ProjektRogzit.php?id=UjProjektHozzaadasa", "_self")</script>';
 }
