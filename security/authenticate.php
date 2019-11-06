@@ -5,13 +5,13 @@
 		$conn = openSQLConn();
 		
 		//Query the database if there is a User with the given credentials
-		$sql = "SELECT * FROM fejlesztok WHERE Username = '$username'";
+		$sql = "SELECT * FROM developers WHERE username = '$username'";
 		$result = $conn->query($sql);
 		
 		if($result->num_rows != 0){
 			//Authentication successful
 			$user_data = $result->fetch_assoc();
-			if(decrypt($user_data['encrypted_credentials']) === decrypt($encrypted_credentials)){
+			if(decrypt($user_data['password']) === decrypt($encrypted_credentials)){
 				return $user_data;
 			}
 			return false;	
