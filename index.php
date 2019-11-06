@@ -29,9 +29,9 @@
 		
 		//Check if authentication was correct
 		if($user_data !== FALSE){
-			print "<pre>";
-			print_r($user_data);
-			print "</pre>";
+			
+			//Display Projects
+			include_once("./Projektek/ProjektOlvas.php")
 		}else{
 			print "username or password is incorrect";
 		}
