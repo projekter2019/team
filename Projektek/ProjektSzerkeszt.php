@@ -40,7 +40,7 @@ if (isset($_POST["Elkuld"])) {
 global $DBkapcsolat;
 $sql = "SELECT * FROM projektek WHERE id = '$KeresoParameter'";
 $stmt = $DBkapcsolat->query($sql);
-$Adatsorok = $stmt->fetch();
+$Adatsorok = $stmt->fetch_array();
 $P_nev = $Adatsorok["p_nev"];
 $P_leiras = $Adatsorok["p_leiras"];
 $P_megrendelo = $Adatsorok["p_megrendelo"];

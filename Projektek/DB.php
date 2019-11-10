@@ -1,6 +1,7 @@
 <?php
-$DSN = 'mysql:dbname=projekter;host=localhost';
-//$DBkapcsolat = new PDO($DSN, 'penzkorh_proj', 'Proj3ct3r');
-$DBkapcsolat = new PDO($DSN, 'root', '');
-//En a PDO-t valasztottam a peldak alapjan, de gondolon a mysqli is jo lehet
+
+//$DBkapcsolat = new mysqli("localhost", "penzkorh_proj", "Proj3ct3r", "penzkorh_projekter");
+$DBkapcsolat = new mysqli("localhost", "root", "", "Projekter");
+
+
 ?>

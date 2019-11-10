@@ -1,9 +1,10 @@
 <?php
 require_once("DB.php");
 if (isset($_POST["Vissza"])) {
-	echo '<script>window.open("../index.php", "_self")</script>'; //Ez miert nem mukodik?
+//	echo '<script>window.open("../index.php", "_self")</script>'; //Ez miert nem mukodik?
+	echo '<script>window.open("projekter.debinfo.hu/index.php", "_self")</script>';
 } elseif (isset($_POST["Rogzit"])) {
-	echo '<script>window.open("ProjektRogzit.php?id=UjProjektHozzaadasa", "_self")</script>';
+	echo '<script>window.open("./ProjektRogzit.php?id=UjProjektHozzaadasa", "_self")</script>';
 }
 
 ?>
@@ -14,7 +15,6 @@ if (isset($_POST["Vissza"])) {
 <html>
 <head>
 	<title>Projektek megtekintése</title>
-<!--	<link rel="stylesheet" type="text/css" href="http://localhost/Projekter/Dizajn/projekterCSS.css">-->
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
 </head>
 
@@ -34,8 +34,8 @@ if (isset($_POST["Vissza"])) {
 	<?php
 	global $DBkapcsolat;
 	$sql = "SELECT * FROM projektek";
-	$stmt = $DBkapcsolat -> query($sql);
-	while ($Adatsorok = $stmt -> fetch()){
+	$stmt = $DBkapcsolat->query($sql);
+	while ($Adatsorok = $stmt -> fetch_array()){
 		$Id = $Adatsorok["id"];
 		$P_nev = $Adatsorok["p_nev"];
 		$P_leiras = $Adatsorok["p_leiras"];
@@ -49,7 +49,7 @@ if (isset($_POST["Vissza"])) {
 			<td><?php echo $P_megrendelo?></td>
 			<td><?php echo $P_hatarido?></td>
 			<td> <a href="ProjektSzerkeszt.php?id=<?php echo $Id; ?>">Szerkesztés</a> </td>
-			<td> <a href="Torol.php?id=--><?php //echo $Id; ?><!--">Törlés</a> </td> <!-- meg nincs megirva-->
+<!--			<td> <a href="Torol.php?id=--><?//php?><!--">Törlés</a> </td> meg nincs megirva-->-->
 		</tr>
 	<?php } ?>
 </table>

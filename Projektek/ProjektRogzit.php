@@ -7,22 +7,22 @@ if (isset($_POST["Elkuld"])) {
 		$P_megrendelo = $_POST["P_megrendelo"];
 		$P_hatarido = $_POST["P_hatarido"];
 		global $DBkapcsolat;
-		$sql = "INSERT INTO projektek(p_nev, p_leiras, p_megrendelo, p_hatarido) //en projektek nevet adtam a tablanak
-                VALUES (:p_neV, :p_leiraS, :p_megrendelO, :p_hataridO)";
+		$sql = "INSERT INTO projektek(p_nev, p_leiras, p_megrendelo, p_hatarido)
+                VALUES (?, ?, ?,?)";
 		$stmt = $DBkapcsolat->prepare($sql);
-		$stmt->bindValue(':p_neV', $P_nev);
-		$stmt->bindValue(':p_leiraS', $P_leiras);
-		$stmt->bindValue(':p_megrendelO', $P_megrendelo);
-		$stmt->bindValue(':p_hataridO', $P_hatarido);
+		$stmt->bind_param('ssss', $P_nev, $P_leiras, $P_megrendelo, $P_hatarido);
+
 		$Execute = $stmt->execute();
 		if ($Execute) {
 			echo '<script>window.alert("Az új projekt elmentése sikerült!")</script>';
 			echo '<script>window.open("ProjektOlvas.php?id=Frissitett", "_self")</script>';
-			//Megnyitaja a masik oldalt, ami listazza majd a meglevo projekteket
+			//Megnyitaja a masik oldalt, ami listazza a meglevo projekteket
 		}
 	}
 	else {
-		echo '<script>window.alert("A projekt nevét, rövid leírását és a határidőt mindenképpen meg kell adni!")</script>';
+		echo '<span class="figyelmeztet">A projekt nevét, rövid leírását és a határidőt mindenképpen meg kell adni!</span>';
+
+//		echo '<script>window.alert("A projekt nevét, rövid leírását és a határidőt mindenképpen meg kell adni!")</script>';
 	}
 }elseif (isset($_POST["Megsem"])) {
 	echo '<script>window.open("ProjektOlvas.php?id=ValtozatlanLista", "_self")</script>';
@@ -35,9 +35,7 @@ if (isset($_POST["Elkuld"])) {
 <html>
 <head>
 	<title>Projekt hozzáadása</title>
-<!--	<link rel="stylesheet" type="text/css" href="http://localhost/Projekter/Dizajn/projekterCSS.css">-->
-<!--	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">-->
-    <link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
+	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
 
 </head>
 
