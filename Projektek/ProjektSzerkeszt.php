@@ -17,7 +17,12 @@ if (isset($_POST["Elkuld"])) {
 		}
 	}
 	else {
-		echo '<span class="figyelmeztet">A projekt nevét, rövid leírását és a határidőt mindenképpen meg kell adni!</span>';
+	    ?>
+<div>
+<!--    echo '<span class="figyelmeztet">A projekt nevét, rövid leírását és a határidőt mindenképpen meg kell adni!</span>';-->
+    <span class="figyelmeztet">A projekt nevét, rövid leírását és a határidőt mindenképpen meg kell adni!</span>'
+</div>
+<?php
 	}
 
 } elseif (isset($_POST["Megsem"])) {
@@ -28,7 +33,7 @@ if (isset($_POST["Elkuld"])) {
 
 
 <!DOCTYPE>
-<html>
+<html lang="hu">
 <head>
 	<title>Projekt szerkesztése</title>
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">

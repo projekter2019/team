@@ -1,17 +1,17 @@
 <html>
 <title>PROJEKTER</title>
 <head>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
+	<link rel="stylesheet" type="text/css" href="./Dizajn/projekterCSS.css">
 </head>
 <body>
 <h1 align=center>PROJEKTER</h1>
 <br>
 <?php
-	//Gather all the useful functions
-	include("./security/encrypt.php");
-	include("./security/decrypt.php");
-	include("./inc/database_controller.php");
-	include("./security/authenticate.php");
+	//Gather all the usefull functions
+	include_once("./security/encrypt.php");
+	include_once("./security/decrypt.php");
+	include_once("./inc/database_controller.php");
+	include_once("./security/authenticate.php");
 
 	//Check if the user has not logged in yet
 	if(!isset($_POST['username'])){
@@ -29,8 +29,6 @@
 		
 		//Check if authentication was correct
 		if($user_data !== FALSE){
-			
-			//Display Projects
 			include_once("./Projektek/ProjektOlvas.php");
 		}else{
 			print "username or password is incorrect";

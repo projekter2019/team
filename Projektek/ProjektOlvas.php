@@ -12,7 +12,7 @@ if (isset($_POST["Vissza"])) {
 <!--es a torleshez-->
 
 <!DOCTYPE>
-<html>
+<html lang="hu">
 <head>
 	<title>Projektek megtekintése</title>
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
@@ -49,7 +49,7 @@ if (isset($_POST["Vissza"])) {
 			<td><?php echo $P_megrendelo?></td>
 			<td><?php echo $P_hatarido?></td>
 			<td> <a href="ProjektSzerkeszt.php?id=<?php echo $Id; ?>">Szerkesztés</a> </td>
-<!--			<td> <a href="Torol.php?id=--><?//php?><!--">Törlés</a> </td> meg nincs megirva-->-->
+			<td> <a href="ProjektTorol.php?id=<?php echo $Id; ?>">Törlés</a> </td>
 		</tr>
 	<?php } ?>
 </table>

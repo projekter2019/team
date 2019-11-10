@@ -32,7 +32,7 @@ if (isset($_POST["Elkuld"])) {
 <!--Ez most csak annyit tud, hogy be lehet gepelni a nevet, rovid leirasat, a megrendelot es a hataridot-->
 
 <!DOCTYPE>
-<html>
+<html lang="hu">
 <head>
 	<title>Projekt hozzáadása</title>
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
