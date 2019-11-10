@@ -1,15 +1,15 @@
 <?php
-require_once("DB.php");
+require_once("../inc/database_controller_gy.php");
 if (isset($_POST["Elkuld"])) {
 	if (!empty($_POST["P_nev"]) && !empty($_POST["P_leiras"]) && !empty($_POST["P_megrendelo"])) {
 		$P_nev = $_POST["P_nev"];
 		$P_leiras = $_POST["P_leiras"];
 		$P_megrendelo = $_POST["P_megrendelo"];
 		$P_hatarido = $_POST["P_hatarido"];
-		global $DBkapcsolat;
+		global $conn;
 		$sql = "INSERT INTO projektek(p_nev, p_leiras, p_megrendelo, p_hatarido)
                 VALUES (?, ?, ?,?)";
-		$stmt = $DBkapcsolat->prepare($sql);
+		$stmt = $conn->prepare($sql);
 		$stmt->bind_param('ssss', $P_nev, $P_leiras, $P_megrendelo, $P_hatarido);
 
 		$Execute = $stmt->execute();

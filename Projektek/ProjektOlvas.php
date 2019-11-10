@@ -1,8 +1,8 @@
 <?php
-require_once("DB.php");
+require_once("../inc/database_controller_gy.php");
 if (isset($_POST["Vissza"])) {
-//	echo '<script>window.open("../index.php", "_self")</script>'; //Ez miert nem mukodik?
-	echo '<script>window.open("projekter.debinfo.hu/index.php", "_self")</script>';
+	echo '<script>window.open("../index.php", "_self")</script>';
+//	echo '<script>window.open("projekter.debinfo.hu/index.php", "_self")</script>';
 } elseif (isset($_POST["Rogzit"])) {
 	echo '<script>window.open("./ProjektRogzit.php?id=UjProjektHozzaadasa", "_self")</script>';
 }
@@ -32,9 +32,10 @@ if (isset($_POST["Vissza"])) {
 	</tr>
 
 	<?php
-	global $DBkapcsolat;
+//	global $DBkapcsolat;
+	global $conn;
 	$sql = "SELECT * FROM projektek";
-	$stmt = $DBkapcsolat->query($sql);
+	$stmt = $conn->query($sql);
 	while ($Adatsorok = $stmt -> fetch_array()){
 		$Id = $Adatsorok["id"];
 		$P_nev = $Adatsorok["p_nev"];

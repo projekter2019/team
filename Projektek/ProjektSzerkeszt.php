@@ -1,5 +1,5 @@
 <?php
-require_once("DB.php");
+require_once("../inc/database_controller_gy.php");
 $KeresoParameter = $_GET["id"];
 if (isset($_POST["Elkuld"])) {
 	if (!empty($_POST["P_nev"]) && !empty($_POST["P_leiras"]) && !empty($_POST["P_megrendelo"])) {
@@ -7,10 +7,10 @@ if (isset($_POST["Elkuld"])) {
 		$P_leiras = $_POST["P_leiras"];
 		$P_megrendelo = $_POST["P_megrendelo"];
 		$P_hatarido = $_POST["P_hatarido"];
-		global $DBkapcsolat;
+		global $conn;
 		$sql = "UPDATE projektek SET p_nev = '$P_nev', p_leiras = '$P_leiras', p_megrendelo = '$P_megrendelo',
  				p_hatarido = '$P_hatarido' WHERE id = '$KeresoParameter'";
-		$Execute = $DBkapcsolat ->query($sql);
+		$Execute = $conn ->query($sql);
 		if ($Execute) {
 			echo '<script>window.alert("A projekt módosítása sikerült!")</script>';
 			echo '<script>window.open("ProjektOlvas.php?id=Frissitett", "_self")</script>';
@@ -42,9 +42,9 @@ if (isset($_POST["Elkuld"])) {
 
 <body>
 <?php
-global $DBkapcsolat;
+global $conn;
 $sql = "SELECT * FROM projektek WHERE id = '$KeresoParameter'";
-$stmt = $DBkapcsolat->query($sql);
+$stmt = $conn->query($sql);
 $Adatsorok = $stmt->fetch_array();
 $P_nev = $Adatsorok["p_nev"];
 $P_leiras = $Adatsorok["p_leiras"];
