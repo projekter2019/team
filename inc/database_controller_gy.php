@@ -1,7 +1,8 @@
 <?php
 
 
-$conn = new mysqli("localhost", "penzkorh_proj", "Proj3ct3r", "penzkorh_projekter");
+//$conn = new mysqli("localhost", "penzkorh_proj", "Proj3ct3r", "penzkorh_projekter");
+$conn = new mysqli("localhost", "root", "", "projekter");
 
 if (!$conn) {
 	echo "Error: Unable to connect to MySQL." . PHP_EOL;
