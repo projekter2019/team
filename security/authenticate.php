@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	#Authenticate by checking for the given encrypted_credentials in the MySQL database
 	function authenticate($username, $encrypted_credentials){
 		//Open connection to MySQL database
@@ -10,13 +11,16 @@
 		
 		if($result->num_rows != 0){
 			//Authentication successful
+			
 			$user_data = $result->fetch_assoc();
 			if(decrypt($user_data['password']) === decrypt($encrypted_credentials)){
+				$_SESSION['username'] = $user_data['username'];
 				return $user_data;
 			}
 			return false;	
 		}else{
 			//Authentication unsuccessful
+			session_destroy();
 			return false;
 		}
 	}
