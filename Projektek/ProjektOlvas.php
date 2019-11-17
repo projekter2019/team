@@ -1,7 +1,8 @@
 <?php
-require_once("../inc/database_controller_gy.php");
+//require_once("../inc/database_controller_gy.php");
+require_once("./inc/database_controller_gy.php");
 if (isset($_POST["Vissza"])) {
-	echo '<script>window.open("../index.php", "_self")</script>';
+	echo '<script>window.open("./index.php", "_self")</script>';
 //	echo '<script>window.open("projekter.debinfo.hu/index.php", "_self")</script>';
 } elseif (isset($_POST["Rogzit"])) {
 	echo '<script>window.open("./ProjektRogzit.php?id=UjProjektHozzaadasa", "_self")</script>';
@@ -55,11 +56,11 @@ if (isset($_POST["Vissza"])) {
 	<?php } ?>
 </table>
 <div>
-    <form class="" action="ProjektOlvas.php" method="post">
+    <form class="" action="index.php" method="post">
         <input type="submit" name="Vissza" value="Vissza a főoldalra">
         <input type="submit" name="Rogzit" value="Új projekt hozzáadása"> <!-- Uj -->
     </form>
-
+</div>
 </body>
 
 
