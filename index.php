@@ -66,8 +66,12 @@ if(!isset($_SESSION['username'])){
 
 		//Check if authentication was correct
 		if($user_data !== FALSE){
-			navigate();
-			
+			if(stripos($user_data['ZAROLT'],"I") === FALSE){
+				$_SESSION['username'] = $user_data['username'];
+				navigate();
+			}else{
+				print "This account has been locked";
+			}
 		}else{
 			print "username or password is incorrect";
 		}
