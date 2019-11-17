@@ -11,6 +11,7 @@
 		<th>Email</th>
 		<th>Név</th>
         <th>Órabér</th>
+		<th>Lezár</th>
 	</tr>
 
 	<?php
@@ -32,6 +33,7 @@
 			<td><?php echo $D_email?></td>
 			<td><?php echo $D_name?></td>
 			<td><?php echo $D_price?></td>
+			<td><a href="./Fejlesztok/developers_lock.php?username=<?php echo $D_username?>">Lezár</a></td>
 		</tr>
 	<?php } ?>
 </table>
