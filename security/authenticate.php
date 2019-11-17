@@ -14,7 +14,6 @@
 			
 			$user_data = $result->fetch_assoc();
 			if(decrypt($user_data['password']) === decrypt($encrypted_credentials)){
-				$_SESSION['username'] = $user_data['username'];
 				return $user_data;
 			}
 			return false;	
