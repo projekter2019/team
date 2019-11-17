@@ -1,6 +1,6 @@
 <?php
-echo "START:" . __FILE__ . "<br />\n";
-echo "DIR:" . __DIR__ . "<br />\n";
+//echo "START:" . __FILE__ . "<br />\n";
+//echo "DIR:" . __DIR__ . "<br />\n";
 //$conn = new mysqli("localhost", "penzkorh_proj", "Proj3ct3r", "penzkorh_projekter");
 $conn = new mysqli("localhost", "penzkorh_proj", "Proj3ct3r", "penzkorh_projekter");
 

@@ -1,7 +1,7 @@
 <?php
 //require_once("../inc/database_controller_gy.php");
-echo "START:" . __FILE__ . "<br />\n";
-echo "DIR:" . __DIR__ . "<br />\n";
+//echo "START:" . __FILE__ . "<br />\n";
+//echo "DIR:" . __DIR__ . "<br />\n";
 require_once("inc/database_controller_gy.php");
 if (isset($_POST["Vissza"])) {
 	echo '<script>window.open("index.php", "_self")</script>';
