@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="Dizajn/projekterCSS.css">
 </head>
 <body>
+<?php include_once("inc/menu.php");	?>
 <h1 align=center>PROJEKTER</h1>
 <br>
 <?php
@@ -18,16 +19,33 @@ if (isset($_SESSION['username']) && $menu == 'kilep') {
 } else {
 	echo ( isset($_SESSION['username']) ) ? "User: " . $_SESSION['username'] . "\n<br />" : '';
 }
-include_once("inc/menu.php");
+
 ?>
 <br>
 <?php
-error_reporting(E_ALL);
 //Gather all the usefull functions
 include_once("security/encrypt.php");
 include_once("security/decrypt.php");
 include_once("inc/database_controller.php");
 include_once("security/authenticate.php");
+
+function navigate(){
+	if(isset($_GET['useredit'])){
+		include_once("Fejlesztok/developers_edit_frontend.html");
+	}elseif(isset($_GET['passchange'])){
+		include_once("Fejlesztok/developers_passwordchange_frontend.html");
+	}elseif(isset($_GET['userdelete'])){
+		include_once("Fejlesztok/developers_delete.php");
+	}elseif(isset($_GET['myprofile'])){
+		include_once("Fejlesztok/developers_controller.php");
+	}elseif(isset($_GET['projects'])){
+		include_once("Projektek/ProjektOlvas.php");
+	}elseif(isset($_GET['developers'])){
+		include_once("Fejlesztok/developers_display.php");
+	}else{
+		print file_get_contents("src/navigateform.html");
+	}
+}
 
 //Check if the user has an open session
 if(!isset($_SESSION['username'])){	
@@ -56,7 +74,8 @@ if(!isset($_SESSION['username'])){
 
 		//Check if authentication was correct
 		if($user_data !== FALSE){
-			include_once("Projektek/ProjektOlvas.php");
+			navigate();
+			
 		}else{
 			print "username or password is incorrect";
 		}		
@@ -67,10 +86,10 @@ if(!isset($_SESSION['username'])){
 		//display the login form
 		print file_get_contents("src/loginform.html");
 	}
-} else {
+}else{
 //	echo "START:" . __FILE__ . "<br />\n";
 //	echo "DIR:" . __DIR__ . "<br />\n";	
-	include_once("Projektek/ProjektOlvas.php");
+	navigate();
 }
 ?>
 </body>

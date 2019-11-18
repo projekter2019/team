@@ -1,13 +1,13 @@
-table{
+table {
     background: #d3d8ff;
 }
 
-div{
-    width: 500px;
+body {
+    width: 800px;
     margin:0 auto;
 }
 
-input[type="Submit"]{
+input[type="Submit"] {
     color: white;
     font-size: 1.0em;
     font-family: Garamond,Georgia,Times,"Times New Roman",serif;
@@ -34,7 +34,7 @@ input[type="text"],input[type="password"],textarea{
     font-size: 1.2em;
 }
 
-.figyelmeztet{
+.figyelmeztet {
     color: red;
     font-size: 1.6em;
     font-family: Garamond,Georgia,Times,"Times New Roman",serif;
@@ -42,7 +42,7 @@ input[type="text"],input[type="password"],textarea{
 
 }
 
-.siker{
+.siker {
     color: blue;
     font-family: Garamond,Georgia,Times,"Times New Roman",serif;
     font-size: 1.6em;
@@ -80,6 +80,3 @@ td{
     font-size: 1.2em;
     font-weight: bold;
 }
-
-
-
