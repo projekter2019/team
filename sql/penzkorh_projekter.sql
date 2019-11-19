@@ -34,7 +34,8 @@ CREATE TABLE `developers` (
   `password` varchar(1000) COLLATE utf8_hungarian_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `name` varchar(100) COLLATE utf8_hungarian_ci DEFAULT NULL,
-  `price` int(10) DEFAULT NULL
+  `price` int(10) DEFAULT NULL,
+  `ZAROLT` varchar(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --

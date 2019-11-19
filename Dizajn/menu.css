@@ -1,0 +1,87 @@
+
+.nav ul ul {
+	display: none;
+}
+
+.nav ul li: hover > ul {
+	display: block;
+}
+
+.nav ul {
+	width: 100%;
+	/*padding: 0 20px;*/
+	padding: 5px 10px;
+	border-radius: 10px;
+	list-style: none;
+	position: relative;
+	display: inline-block;
+/*	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);*/
+	
+    /*height: 40px;*/
+    background-color: #5c69ff;
+    border: 5px solid;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-color: rgb(221,216,212);
+    font-weight: bold;
+    margin: 3px;	
+	
+}
+
+.nav ul li {
+	float: left;
+}
+	
+.nav ul li a {
+	padding: 5px 10px 5px 10px;
+	display: block;
+	/*color: #757575;*/
+	color: whitesmoke;
+	text-decoration:none;	
+}	
+
+.nav ul li:hover {
+	background: #4b545f;
+	background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -webkit-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+}
+
+.nav ul li:hover  a{
+	color: #ffffff;
+}
+
+.nav ul li:hover  > ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.nav ul li:hover  > ul li{
+	float: none;
+	display: blcok;
+}
+
+.nav ul li:hover  > ul li a{
+	color: #666666;
+	min-width: 150px;
+}
+
+.nav ul li:hover  > ul li a: hover{
+	color: #ffffff;
+}
+
+.nav ul li {
+	position: relative;
+}
+
+.nav ul li ul{
+	position: absolute;
+	top: 30px; 
+	left: 0px;
+}
+
