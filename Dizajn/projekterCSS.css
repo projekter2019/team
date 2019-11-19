@@ -5,6 +5,7 @@ table {
 body {
     width: 800px;
     margin:0 auto;
+    background-color: antiquewhite;
 }
 
 input[type="Submit"] {

@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	#Authenticate by checking for the given encrypted_credentials in the MySQL database
 	function authenticate($username, $encrypted_credentials){
 		//Open connection to MySQL database
