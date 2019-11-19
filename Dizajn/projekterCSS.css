@@ -1,0 +1,87 @@
+table {
+    background: #d3d8ff;
+}
+
+body {
+    width: 800px;
+    margin:0 auto;
+    background-color: antiquewhite;
+}
+
+input[type="Submit"] {
+    color: white;
+    font-size: 1.0em;
+    font-family: Garamond,Georgia,Times,"Times New Roman",serif;
+    width: 200px;
+    height: 40px;
+    background-color: #5c69ff;
+    border: 5px solid ;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-color: rgb(221,216,212);
+    font-weight: bold;
+    margin: 3px;
+    float: right;
+}
+
+input[type="text"],input[type="password"],textarea{
+    font-family: Garamond,Georgia,Times,"Times New Roman",serif;
+    border:1px solid;
+    background-color: #d3d8ff;
+    width: 480px;
+    padding: .5em;
+    font-size: 1.2em;
+}
+
+.figyelmeztet {
+    color: red;
+    font-size: 1.6em;
+    font-family: Garamond,Georgia,Times,"Times New Roman",serif;
+    font-weight:bold;
+
+}
+
+.siker {
+    color: blue;
+    font-family: Garamond,Georgia,Times,"Times New Roman",serif;
+    font-size: 1.6em;
+    font-weight:bold;
+}
+
+th{
+    font-family: Garamond;
+    color:black;
+    font-weight: bold;
+    background-color: lightgrey;
+    font-size: 1.2em;
+}
+
+caption{
+    font-family: Garamond;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+td{
+    border: 1px solid;
+    overflow: hidden;
+    width: 70px;
+    text-align: center;
+    color: black;
+    font-family: Garamond,Georgia,Times,"Times New Roman",serif;
+    font-size: 1.2em;
+    padding: 3px;
+}
+
+.MezoInfo{
+    color: #444444;
+    font-family: Garamond,Georgia,Times,"Times New Roman",serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+=======
+>>>>>>> efb8b1d7408ffd46a14a331b61e98b547d60499c
