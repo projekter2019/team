@@ -11,6 +11,7 @@ if (isset($_POST["Elkuld"])) {
 	$sql ="DELETE FROM projektek WHERE id='$KeresoParameter'";
 	$Execute=$conn->query($sql);
 	if ($Execute) {
+//		echo '<script>window.alert("A projekt törlése sikerült!", "_self")</script>';
 		echo '<script>window.open("ProjektOlvas.php?id=AprojektSikeresenTorolve","_self")</script>';
 
 	}
@@ -23,8 +24,10 @@ if (isset($_POST["Elkuld"])) {
 <!DOCTYPE>
 <html lang="hu">
 <head>
-	<title>A kiválasztott projekt törlése</title>
+    <meta charset="UTF-8">
+    <title>A kiválasztott projekt törlése</title>
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
+    <link rel="stylesheet" type="text/css" href="Dizajn/menu.css">
 </head>
 <style media="screen">
 </style>

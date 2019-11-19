@@ -34,7 +34,8 @@ if (isset($_POST["Elkuld"])) {
 <!DOCTYPE>
 <html lang="hu">
 <head>
-	<title>Projekt hozzáadása</title>
+    <meta charset="UTF-8">
+    <title>Projekt hozzáadása</title>
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
 
 </head>
@@ -53,7 +54,9 @@ if (isset($_POST["Elkuld"])) {
 			<input type="text" name="P_leiras" value="">
 			<span class="MezoInfo">Megrendelő:</span>
 			<br>
-			<input type="text" name="P_megrendelo" value="">
+            <input type="button" value="A megrendelő kiválasztása" name="MegbizoValaszto"
+                   onclick="location='../Megrendelok/MegrendeloKivalaszt.php'" class="MegrendeloValaszto"></input><br>
+<!--			<input type="text" name="P_megrendelo" value="">-->
 			<span class="MezoInfo">Az új projekt határideje:</span>
 			<br>
 			<input type="date" name="P_hatarido" value="">

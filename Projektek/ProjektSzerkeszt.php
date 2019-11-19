@@ -35,7 +35,8 @@ if (isset($_POST["Elkuld"])) {
 <!DOCTYPE>
 <html lang="hu">
 <head>
-	<title>Projekt szerkesztése</title>
+    <meta charset="UTF-8">
+    <title>Projekt szerkesztése</title>
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
 <!--	<link rel="stylesheet" type="text/css" href="http://localhost/Projekter/Dizajn/projekterCSS.css">-->
 </head>

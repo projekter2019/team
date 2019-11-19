@@ -14,11 +14,14 @@ if (isset($_POST["Vissza"])) {
 <!DOCTYPE>
 <html lang="hu">
 <head>
+    <meta charset="UTF-8">
 	<title>Projektek megtekintése</title>
+    <link rel="stylesheet" type="text/css" href="../Dizajn/menu.css">
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
 </head>
 
 <body>
+<?php include_once("ProjektMenu.php");	?>
 <table width="1000" border="4" align="center">
 	<caption>Az adatbázisban szereplő projektek</caption>
 	<tr>
