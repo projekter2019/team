@@ -1,8 +1,8 @@
 <?php
 	
-	function encrypt($data, $pubkey_path="./security/mykey.pub")
+	function encrypt($data)
     {
-		$public_key = file_get_contents($pubkey_path);
+		$public_key = file_get_contents("./security/mykey.pub");
         if (openssl_public_encrypt($data, $encrypted, $public_key)){
             $data = base64_encode($encrypted);
         }else{
