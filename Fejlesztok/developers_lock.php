@@ -1,6 +1,6 @@
 <html lang="hu">
 <?php
-	include_once("../inc/database_controller.php");
+	include_once("inc/database_controller.php");
 	$conn = OpenSqlConn();
 	$sql = "UPDATE developers SET ZAROLT='I' WHERE username = '".$_GET['username']."'";
 	
@@ -10,6 +10,6 @@
 		echo "<p>Account could not be locked!</p>";
 	}
 ?>
-<meta http-equiv="refresh" content="3;url=../index.php" />
+<meta http-equiv="refresh" content="3;url=index.php" />
 <p>Redirecting after three seconds...</p>
 </html>
