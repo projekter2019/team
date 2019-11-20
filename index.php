@@ -57,16 +57,19 @@ if( isset($_SESSION['username']) ) {
 	} elseif ($modul == "developers") {
 		if ($funkcio == "useredit") {
 			include_once("Fejlesztok/developers_edit_frontend.html");
+		} elseif ($funkcio == 'editdata') {
+			include_once("Fejlesztok/developers_edit_backend.php");
 		} elseif ($funkcio == 'passchange') {
 			include_once("Fejlesztok/developers_passwordchange_frontend.html");
+		} elseif ($funkcio == 'passchangedata') {
+			include_once("Fejlesztok/developers_passwordchange_backend.php");
 		} elseif ($funkcio == 'userdelete') {
 			include_once("Fejlesztok/developers_delete.php");
-		} elseif ($funkcio == 'myprofile') {
-			include_once("Fejlesztok/developers_controller.php");
-		} else {
+		} elseif ($funkcio == 'userlock') {
+			include_once("Fejlesztok/developers_lock.php");
+		}else {
 			include_once("Fejlesztok/developers_display.php");
 		}
-		include_once("src/navigateform.html");
 	} elseif ($modul == "time") {
 		include_once("Projektek/ProjektOlvas.php");	
 		
@@ -76,8 +79,17 @@ if( isset($_SESSION['username']) ) {
 		include_once("Projektek/ProjektOlvas.php");	
 	} 
 } else {
-	include_once("src/loginform.html");
-	print "<p>" . $login_message . "</p><br />";
+	if($funkcio == "register"){
+		include_once("src/registerform.html");
+	}elseif($funkcio == "registerdata"){
+		include_once("security/register.php");
+		registerFromPOST();
+		echo ". Redirecting...";
+		header( "refresh:3;url=index.php" );
+	}else{
+		include_once("src/loginform.html");
+		print "<p>" . $login_message . "</p><br />";
+	}
 }
 ?>
 </body>
