@@ -4,6 +4,8 @@
 				<li><a href="index.php?modul=projects&funkcio=lista">PROJEKTEK</a>
 				<li><a href="index.php?modul=developers&funkcio=lista">FEJLESZTŐK</a>
 				<li><a href="index.php?modul=time&funkcio=lista">IDŐ KEZELÉSE</a>
+				<li><a href="index.php?modul=developers&funkcio=useredit">FIÓK SZERKESZTÉSE</a>
+				<li><a href="index.php?modul=developers&funkcio=passchange">JELSZÓ VÁLTOZTATÁSA</a>
 				<li><a href="index.php?modul=other&funkcio=logout">LOGOUT</a>
 <!--					<ul id="almenu">
 						<li><a href="#">Contact Us</a></li>
