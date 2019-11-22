@@ -1,5 +1,5 @@
 <?php
-require_once("../inc/database_controller_gy.php");
+require_once("inc/database_controller_gy.php");
 $KeresoParameter = $_GET["id"];
 if (isset($_POST["Elkuld"])) {
 	if (!empty($_POST["P_nev"]) && !empty($_POST["P_leiras"]) && !empty($_POST["P_megrendelo"])) {
@@ -59,12 +59,15 @@ $P_hatarido = $Adatsorok["p_hatarido"];
 			<span class="MezoInfo">A projekt neve:</span>
 			<br>
 			<input type="text" name="P_nev" value="<?php echo $P_nev;?>">
+			<br>
 			<span class="MezoInfo">A projekt rövid leírása:</span>
 			<br>
 			<input type="text" name="P_leiras" value="<?php echo $P_leiras;?>">
+			<br>
 			<span class="MezoInfo">Megrendelő:</span>
 			<br>
 			<input type="text" name="P_megrendelo" value="<?php echo $P_megrendelo;?>">
+			<br>
 			<span class="MezoInfo">A projekt határideje:</span>
 			<br>
 			<input type="date" name="P_hatarido" value="<?php echo $P_hatarido;?>">

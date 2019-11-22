@@ -3,6 +3,7 @@
 	error_reporting(E_ALL);
 	$modul = ( filter_has_var(INPUT_GET, 'modul') ) ? filter_input( INPUT_GET , 'modul' ) : '';
 	$funkcio = ( filter_has_var(INPUT_GET, 'funkcio') ) ? filter_input( INPUT_GET , 'funkcio' ) : '';
+	$id = ( filter_has_var(INPUT_GET, 'id') ) ? filter_input( INPUT_GET , 'id' ) : '';
 	$login_message = "";
 	if (isset($_SESSION['username']) && $funkcio == 'logout') {
 		session_destroy();
@@ -49,8 +50,10 @@ if( isset($_SESSION['username']) ) {
 	if ($modul == "projects") {
 		if ($funkcio == 'lista'){
 			include_once("Projektek/ProjektOlvas.php");
-		} elseif ($funkcio == 'lista'){
-			include_once("Projektek/ProjektOlvas.php");
+		} elseif ($funkcio == 'edit'){
+			include_once("Projektek/ProjektSzerkeszt.php");
+		} elseif ($funkcio == 'delete'){
+			include_once("Projektek/ProjektTorol.php");
 		} else {
 			include_once("Projektek/ProjektOlvas.php");			
 		}
@@ -71,8 +74,13 @@ if( isset($_SESSION['username']) ) {
 			include_once("Fejlesztok/developers_display.php");
 		}
 	} elseif ($modul == "time") {
-		include_once("Projektek/ProjektOlvas.php");	
-		
+		if ($funkcio == "lista") {
+			include_once("time/Time.php");	
+		} elseif ($funkcio == 'save') {
+			include_once("time/Time.php");	
+		}else {
+			include_once("time/Time.php");	
+		}
 	} else {
 		//echo "SESSION:" . ( isset($_SESSION['username']) ) ? "User: " . $_SESSION['username'] . "\n<br />" : '';
 		//echo "Projektek/ProjektOlvas.php:" . "\n<br />";
