@@ -1,12 +1,20 @@
+<?php
+include_once("inc/database_controller.php");
+$conn = OpenSQLConn();
+$sql = "SELECT * FROM developers WHERE Username = '".$_SESSION['username']."'";
+$result = $conn->query($sql) -> fetch_array();
+CloseSQLConn($conn);
+?>
+
 <div id="edit_form">
     <form name="f1" method="post" action="index.php?modul=developers&funkcio=editdata" id="f1">
 		<fieldset>
 			<span class="MezoInfo">Email:</span><br/>
-			<input type="text" name="email" value="" /><br/>
+			<input type="text" name="email" value='<?php echo $result['email']; ?>' /><br/>
 			<span class="MezoInfo">Name :</span><br/>
-			<input type="text" name="name" value="" /><br/>
+			<input type="text" name="name" value="<?php echo $result['name']; ?>" /><br/>
 			<span class="MezoInfo">Price :</span><br/>
-			<input type="text" name="price" value="" /><br/>
+			<input type="text" name="price" value="<?php echo $result['price']; ?>" /><br/>
 			<input style="display:none" type="text" name="username" value="<?php echo $_SESSION['username']?>" />
 			<input type="submit" name="edit" value="Edit" />
 		</fieldset>
