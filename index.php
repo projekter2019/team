@@ -58,6 +58,7 @@ if( isset($_SESSION['username']) ) {
 			include_once("Projektek/ProjektOlvas.php");			
 		}
 	} elseif ($modul == "developers") {
+		include_once("Fejlesztok/developers_menu.php");
 		if ($funkcio == "useredit") {
 			include_once("Fejlesztok/developers_edit_frontend.html");
 		} elseif ($funkcio == 'editdata') {
