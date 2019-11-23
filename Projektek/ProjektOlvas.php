@@ -57,7 +57,10 @@ if (isset($_POST["Vissza"])) {
 			<td><?php echo $P_megrendelo?></td>
 			<td><?php echo $P_hatarido?></td>
 			<td> <a href="index.php?modul=projects&funkcio=edit&id=<?php echo $Id; ?>">Szerkesztés</a> </td>
+<<<<<<< HEAD
 <!--			<td> <a href="ProjekSzerkeszt.php&id=--><?php //echo $Id; ?><!--">Szerkesztés</a> </td>-->
+=======
+>>>>>>> 2bba867ed602a75c4927fe2e36831a70167e2844
 			<td> <a href="index.php?modul=projects&funkcio=delete&id=<?php echo $Id; ?>">Törlés</a> </td>
 		</tr>
 	<?php } ?>

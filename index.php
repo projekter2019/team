@@ -54,10 +54,13 @@ if( isset($_SESSION['username']) ) {
 			include_once("Projektek/ProjektSzerkeszt.php");
 		} elseif ($funkcio == 'delete'){
 			include_once("Projektek/ProjektTorol.php");
+<<<<<<< HEAD
 		} elseif ($funkcio == 'create'){
 			include_once("Projektek/ProjektRogzit.php");
 		} elseif ($funkcio == 'search'){
 			include_once("Projektek/ProjektKereso.php");
+=======
+>>>>>>> 2bba867ed602a75c4927fe2e36831a70167e2844
 		} else {
 			include_once("Projektek/ProjektOlvas.php");			
 		}

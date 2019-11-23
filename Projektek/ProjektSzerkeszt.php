@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 require_once("inc/database_controller.php");
+=======
+require_once("inc/database_controller_gy.php");
+>>>>>>> 2bba867ed602a75c4927fe2e36831a70167e2844
 $KeresoParameter = $_GET["id"];
 if (isset($_POST["Elkuld"])) {
 	if (!empty($_POST["P_nev"]) && !empty($_POST["P_leiras"]) && !empty($_POST["P_megrendelo"])) {
