@@ -37,5 +37,4 @@
 		</tr>
 	<?php } ?>
 </table>
-	<a href="./index.php">Vissza</a>
 </html>
