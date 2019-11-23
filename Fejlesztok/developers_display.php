@@ -7,7 +7,7 @@
 	<caption>Az adatbázisban szereplő fejlesztők</caption>
 	<tr>
 		<th>ID</th>
-		<th>Felhasznáó név</th>
+		<th>Felhasználó név</th>
 		<th>Email</th>
 		<th>Név</th>
         <th>Órabér</th>
@@ -33,9 +33,8 @@
 			<td><?php echo $D_email?></td>
 			<td><?php echo $D_name?></td>
 			<td><?php echo $D_price?></td>
-			<td><a href="./Fejlesztok/developers_lock.php?username=<?php echo $D_username?>">Lezár</a></td>
+			<td><a href="index.php?modul=developers&funkcio=userlock&username=<?php echo $D_username?>">Lezár</a></td>
 		</tr>
 	<?php } ?>
 </table>
-	<a href="./index.php">Vissza</a>
 </html>

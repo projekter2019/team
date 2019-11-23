@@ -2,7 +2,8 @@
 //require_once("../inc/database_controller_gy.php");
 //echo "START:" . __FILE__ . "<br />\n";
 //echo "DIR:" . __DIR__ . "<br />\n";
-require_once("inc/database_controller_gy.php");
+//require_once("inc/database_controller_gy.php");
+require_once("inc/database_controller.php");
 if (isset($_POST["Vissza"])) {
 	echo '<script>window.open("index.php", "_self")</script>';
 //	echo '<script>window.open("projekter.debinfo.hu/index.php", "_self")</script>';
@@ -38,8 +39,8 @@ if (isset($_POST["Vissza"])) {
 	</tr>
 
 	<?php
-//	global $DBkapcsolat;
-	global $conn;
+//	global $conn;
+	$conn = OpenSQLConn();
 	$sql = "SELECT * FROM projektek";
 	$stmt = $conn->query($sql);
 	while ($Adatsorok = $stmt -> fetch_array()){
@@ -55,17 +56,18 @@ if (isset($_POST["Vissza"])) {
 			<td><?php echo $P_leiras?></td>
 			<td><?php echo $P_megrendelo?></td>
 			<td><?php echo $P_hatarido?></td>
-			<td> <a href="ProjektSzerkeszt.php?id=<?php echo $Id; ?>">Szerkesztés</a> </td>
-			<td> <a href="ProjektTorol.php?id=<?php echo $Id; ?>">Törlés</a> </td>
+			<td> <a href="index.php?modul=projects&funkcio=edit&id=<?php echo $Id; ?>">Szerkesztés</a> </td>
+<!--			<td> <a href="ProjekSzerkeszt.php&id=--><?php //echo $Id; ?><!--">Szerkesztés</a> </td>-->
+			<td> <a href="index.php?modul=projects&funkcio=delete&id=<?php echo $Id; ?>">Törlés</a> </td>
 		</tr>
 	<?php } ?>
 </table>
-<div>
-    <form class="" action="index.php" method="post">
-        <input type="submit" name="Vissza" value="Vissza a főoldalra">
-        <input type="submit" name="Rogzit" value="Új projekt hozzáadása"> <!-- Uj -->
-    </form>
-</div>
+<!--<div>-->
+<!--    <form class="" action="index.php" method="post">-->
+<!--        <input type="submit" name="Vissza" value="Vissza a főoldalra">-->
+<!--        <input type="submit" name="Rogzit" value="Új projekt hozzáadása"> <!-- Uj -->-->
+<!--    </form>-->
+<!--</div>-->
 </body>
 
 

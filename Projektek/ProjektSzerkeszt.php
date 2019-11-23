@@ -1,5 +1,5 @@
 <?php
-require_once("../inc/database_controller_gy.php");
+require_once("inc/database_controller.php");
 $KeresoParameter = $_GET["id"];
 if (isset($_POST["Elkuld"])) {
 	if (!empty($_POST["P_nev"]) && !empty($_POST["P_leiras"]) && !empty($_POST["P_megrendelo"])) {
@@ -7,13 +7,14 @@ if (isset($_POST["Elkuld"])) {
 		$P_leiras = $_POST["P_leiras"];
 		$P_megrendelo = $_POST["P_megrendelo"];
 		$P_hatarido = $_POST["P_hatarido"];
-		global $conn;
+//		global $conn;
+		$conn = OpenSQLConn();
 		$sql = "UPDATE projektek SET p_nev = '$P_nev', p_leiras = '$P_leiras', p_megrendelo = '$P_megrendelo',
  				p_hatarido = '$P_hatarido' WHERE id = '$KeresoParameter'";
 		$Execute = $conn ->query($sql);
 		if ($Execute) {
 			echo '<script>window.alert("A projekt módosítása sikerült!")</script>';
-			echo '<script>window.open("ProjektOlvas.php?id=Frissitett", "_self")</script>';
+			echo '<script>window.open("index.php?modul=projects&funkcio=lista", "_self")</script>';
 		}
 	}
 	else {
@@ -25,8 +26,8 @@ if (isset($_POST["Elkuld"])) {
 <?php
 	}
 
-} elseif (isset($_POST["Megsem"])) {
-	echo '<script>window.open("ProjektOlvas.php?id=Frissitett", "_self")</script>';
+//} elseif (isset($_POST["Megsem"])) {
+//	echo '<script>window.open("ProjektOlvas.php?id=Frissitett", "_self")</script>';
 }
 ?>
 
@@ -38,45 +39,48 @@ if (isset($_POST["Elkuld"])) {
     <meta charset="UTF-8">
     <title>Projekt szerkesztése</title>
 	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-<!--	<link rel="stylesheet" type="text/css" href="http://localhost/Projekter/Dizajn/projekterCSS.css">-->
 </head>
 
 <body>
+<?php include_once("ProjektMenu.php");	?>
+
 <?php
-global $conn;
+//global $conn;
+$conn = OpenSQLConn();
 $sql = "SELECT * FROM projektek WHERE id = '$KeresoParameter'";
 $stmt = $conn->query($sql);
 $Adatsorok = $stmt->fetch_array();
+$ID = $Adatsorok["id"];
 $P_nev = $Adatsorok["p_nev"];
 $P_leiras = $Adatsorok["p_leiras"];
 $P_megrendelo = $Adatsorok["p_megrendelo"];
 $P_hatarido = $Adatsorok["p_hatarido"];
 
 ?>
-<div class="">
-	<form class="" action="ProjektSzerkeszt.php?id=<?php echo $KeresoParameter;?>" method="post">
+
+	<form class="" action="index.php?modul=projects&funkcio=edit&id= <?php echo $ID?>" method="post">
 		<fieldset>
 			<span class="MezoInfo">A projekt neve:</span>
 			<br>
 			<input type="text" name="P_nev" value="<?php echo $P_nev;?>">
+			<br>
 			<span class="MezoInfo">A projekt rövid leírása:</span>
 			<br>
 			<input type="text" name="P_leiras" value="<?php echo $P_leiras;?>">
+			<br>
 			<span class="MezoInfo">Megrendelő:</span>
 			<br>
 			<input type="text" name="P_megrendelo" value="<?php echo $P_megrendelo;?>">
+			<br>
 			<span class="MezoInfo">A projekt határideje:</span>
 			<br>
 			<input type="date" name="P_hatarido" value="<?php echo $P_hatarido;?>">
 			<br>
 			<input type="submit" name="Elkuld", value="A változások mentése">
-			<input type="submit" name="Megsem", value="Mégsem">
-
+<!--			<input type="submit" name="Megsem", value="Mégsem">-->
 		</fieldset>
 	</form>
-</div>
 </body>
-
 
 </html>
 
