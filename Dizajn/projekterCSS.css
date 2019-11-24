@@ -144,7 +144,6 @@ td{
 
 h1{
 	position: relative;
-	z-index: 3;
 	font-size: -webkit-xxx-large;
     border-radius: 10px;
     width: min-content;
@@ -155,8 +154,6 @@ h1{
     padding-right: 10px;
     color: #f3f4ff;
     box-shadow: 0px 5px 7px #7a7a7a;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
 }
 
 #login_form {
