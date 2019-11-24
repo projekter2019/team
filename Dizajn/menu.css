@@ -19,7 +19,7 @@
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	background: -webkit-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);*/
-	box-shadow: 0px 2px 7px grey;
+	box-shadow: 0px 2px 7px #1769a9;
     /*height: 40px;*/
     background-color: #6c7ae0;
     border: 10px;
