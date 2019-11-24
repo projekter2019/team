@@ -7,7 +7,7 @@
 	<caption>Az adatbázisban szereplő fejlesztők</caption>
 	<tr>
 		<th>ID</th>
-		<th>Felhasznáó név</th>
+		<th>Felhasználó név</th>
 		<th>Email</th>
 		<th>Név</th>
         <th>Órabér</th>
@@ -37,5 +37,4 @@
 		</tr>
 	<?php } ?>
 </table>
-	<a href="./index.php">Vissza</a>
 </html>

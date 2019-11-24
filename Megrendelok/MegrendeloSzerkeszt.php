@@ -32,16 +32,6 @@ if (isset($_POST["Elkuld"])) {
 	echo '<script>window.open("MegrendeloOlvas.php?id=Frissitett", "_self")</script>';
 }
 ?>
-
-<!DOCTYPE>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>A megrendelők szerkesztése</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-</head>
-
-<body>
 <?php
 global $conn;
 $sql = "SELECT * FROM megrendelok WHERE m_id = '$KeresoParameter'";
@@ -69,12 +59,3 @@ $M_elerhetoseg = $Adatsorok["m_elerhetoseg"];
 		</fieldset>
 	</form>
 </div>
-</body>
-
-
-</html>
-
-
-
-
-

@@ -1,33 +1,16 @@
-
-
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Projekt keresés</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-	<link rel="stylesheet" type="text/css" href="../Dizajn/menu.css">
-</head>
-<body>
-
 <?php include_once("ProjektMenu.php");	?>
-
-<form action="ProjektKereso.php" method="post">
+<form action="index.php?modul=projects&funkcio=search" method="post">
 	<fieldset>
 		<span class="MezoInfo">A projekt neve:</span>
 		<input type="text" name="P_nev" value=""><br>
 		<input type="submit" name="Elkuld", value="Keresés">
-		<input type="submit" name="Megsem", value="Mégsem">
+<!--		<input type="submit" name="Megsem", value="Mégsem">-->
 
 	</fieldset>
 </form>
-<a href="../index.php">Vissza</a>
-
-</body>
-</html>
-
+<a href="index.php">Vissza</a>
 <?php
-
-require_once("../inc/database_controller.php");
+require_once("inc/database_controller.php");
 //require_once("../inc/database_controller_gy.php");
 
 if (isset($_POST["Elkuld"])) {
@@ -53,7 +36,7 @@ if (isset($_POST["Elkuld"])) {
 			<th>A projekt rövid leírása</th>
 			<th>Megbízó</th>
             <th width="120px">Határidő</th>
-            <th width="100px">Szerkesztés</th>
+<!--            <th width="100px">Szerkesztés</th>-->
 		</tr>
 
 		<?php
@@ -71,7 +54,7 @@ if (isset($_POST["Elkuld"])) {
 			<td><?php echo $P_leiras?></td>
 			<td><?php echo $P_megrendelo?></td>
 			<td><?php echo $P_hatarido?></td>
-			<td> <a href="/index.php?modul=developers&funkcio=lista">Kiválaszt</a> </td>
+<!--			<td> <a href="index.php?modul=developers&funkcio=lista">Kiválaszt</a> </td>-->
 		</tr>
 		<?php }?>
 	</table>
@@ -85,4 +68,3 @@ if (isset($_POST["Megsem"])) {
 //	include("/index.php?modul=projects&funkcio=lista");
 	echo '<script>window.open("/index.php?modul=projects&funkcio=lista", "_self")</script>';
 }
-?>

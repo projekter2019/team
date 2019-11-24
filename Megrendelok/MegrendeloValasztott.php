@@ -19,19 +19,7 @@ if (isset($_POST["Hozzaad"])) {
 }else if(isset($_POST["Megsem"])){
 	echo '<script>window.open("MegrendeloKivalaszt.php?id=Frissitett", "_self")</script>';
 }
-?>
 
-<!DOCTYPE>
-<html lang="hu">
-<head>
-	<title>A kiválasztott megrendelő törlése</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-</head>
-<style media="screen">
-</style>
-
-<body>
-<?php
 global $conn;
 $sql = "SELECT * FROM megrendelok WHERE m_id = '$KeresoParameter'";
 $stmt = $conn->query($sql);
@@ -60,9 +48,3 @@ $M_elerhetoseg = $Adatsorok["m_elerhetoseg"];
 		<input type="submit" name="Megsem", value="Mégsem">
 	</div>
 </form>
-
-</body>
-</html>
-
-
-

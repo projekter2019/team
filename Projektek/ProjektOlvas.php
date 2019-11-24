@@ -2,7 +2,8 @@
 //require_once("../inc/database_controller_gy.php");
 //echo "START:" . __FILE__ . "<br />\n";
 //echo "DIR:" . __DIR__ . "<br />\n";
-require_once("inc/database_controller_gy.php");
+//require_once("inc/database_controller_gy.php");
+require_once("inc/database_controller.php");
 if (isset($_POST["Vissza"])) {
 	echo '<script>window.open("index.php", "_self")</script>';
 //	echo '<script>window.open("projekter.debinfo.hu/index.php", "_self")</script>';
@@ -10,21 +11,8 @@ if (isset($_POST["Vissza"])) {
 	echo '<script>window.open("ProjektRogzit.php?id=UjProjektHozzaadasa", "_self")</script>';
 }
 
+include_once("ProjektMenu.php");	
 ?>
-<!--Egy tablazatban kiirja a Projektek adatbazisban szereplo projekteket, illetve egy-egy gombot a szerkeszteshez-->
-<!--es a torleshez-->
-
-<!DOCTYPE>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-	<title>Projektek megtekintése</title>
-    <link rel="stylesheet" type="text/css" href="../Dizajn/menu.css">
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-</head>
-
-<body>
-<?php include_once("ProjektMenu.php");	?>
 <table width="1000" border="4" align="center">
 	<caption>Az adatbázisban szereplő projektek</caption>
 	<tr>
@@ -37,9 +25,9 @@ if (isset($_POST["Vissza"])) {
         <th>Törlés</th>
 	</tr>
 
-	<?php
-//	global $DBkapcsolat;
-	global $conn;
+<?php
+//	global $conn;
+	$conn = OpenSQLConn();
 	$sql = "SELECT * FROM projektek";
 	$stmt = $conn->query($sql);
 	while ($Adatsorok = $stmt -> fetch_array()){
@@ -48,7 +36,7 @@ if (isset($_POST["Vissza"])) {
 		$P_leiras = $Adatsorok["p_leiras"];
 		$P_megrendelo = $Adatsorok["p_megrendelo"];
 		$P_hatarido = $Adatsorok["p_hatarido"];
-		?>
+	?>
 		<tr>
 			<td><?php echo $Id ?></td>
 			<td><?php echo $P_nev?></td>
@@ -60,13 +48,3 @@ if (isset($_POST["Vissza"])) {
 		</tr>
 	<?php } ?>
 </table>
-<div>
-    <form class="" action="index.php" method="post">
-        <input type="submit" name="Vissza" value="Vissza a főoldalra">
-        <input type="submit" name="Rogzit" value="Új projekt hozzáadása"> <!-- Uj -->
-    </form>
-</div>
-</body>
-
-
-</html>

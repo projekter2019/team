@@ -1,3 +1,4 @@
+=======
 <html lang="hu">
 <?php
 	include_once("inc/database_controller.php");
@@ -13,4 +14,3 @@
 ?>
 <meta http-equiv="refresh" content="3;url=index.php" />
 <p>Redirecting after three seconds...</p>
-</html>

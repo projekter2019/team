@@ -3,7 +3,7 @@ table {
 }
 
 body {
-    width: 800px;
+    width: 1000px;
     margin:0 auto;
     background-color: antiquewhite;
 }
@@ -82,6 +82,8 @@ td{
     font-weight: bold;
 }
 
-
-=======
->>>>>>> efb8b1d7408ffd46a14a331b61e98b547d60499c
+#login_form {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}

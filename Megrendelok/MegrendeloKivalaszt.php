@@ -1,5 +1,5 @@
 <?php
-require_once("../inc/database_controller_gy.php");
+require_once("inc/database_controller_gy.php");
 //require_once("inc/database_controller_gy.php");
 
 session_start();
@@ -14,18 +14,6 @@ if (isset($_POST["Vissza"])) {
 }
 
 ?>
-<!--Egy tablazatban kiirja a Megrendelok adatbazisban szereplo megrendeloket, illetve egy-egy gombot a szerkeszteshez-->
-<!--es a torleshez-->
-
-<!DOCTYPE>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Megrendelő kiválasztása</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-</head>
-
-<body>
 <table width="1000" border="4" align="center">
 	<caption>Az adatbázisban szereplő megrendelők</caption>
 	<br>
@@ -62,10 +50,3 @@ if (isset($_POST["Vissza"])) {
 		<input type="submit" name="Rogzit" value="Új megrendelo hozzáadása">
 	</form>
 </div>
-</body>
-
-
-</html>
-
-
-

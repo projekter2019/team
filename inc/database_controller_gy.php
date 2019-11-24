@@ -18,5 +18,3 @@ if (!$conn) {
 function closeSQLConnGy($conn){
 	mysqli_close($conn);
 }
-
-?>

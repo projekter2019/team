@@ -1,5 +1,5 @@
 <?php
-require_once("../inc/database_controller_gy.php");
+require_once("inc/database_controller_gy.php");
 //require_once("inc/database_controller_gy.php");
 
 if (isset($_POST["Elkuld"])) {
@@ -28,19 +28,6 @@ if (isset($_POST["Elkuld"])) {
 	echo '<script>window.open("MegrendeloOlvas.php?id=ValtozatlanLista", "_self")</script>';
 }
 ?>
-
-<!DOCTYPE>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Új megrendelő adatainak hozzáadása</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-
-</head>
-
-<body>
-
-
 <div class="">
 	<form class="" action="MegrendeloRogzit.php" method="post">
 		<fieldset>
@@ -58,12 +45,3 @@ if (isset($_POST["Elkuld"])) {
 		</fieldset>
 	</form>
 </div>
-
-</body>
-
-</html>
-
-
-
-
-

@@ -1,12 +1,13 @@
 <?php
-require_once("../inc/database_controller_gy.php");
+require_once("inc/database_controller.php");
 if (isset($_POST["Elkuld"])) {
 	if (!empty($_POST["P_nev"]) && !empty($_POST["P_leiras"]) && !empty($_POST["P_megrendelo"])) {
 		$P_nev = $_POST["P_nev"];
 		$P_leiras = $_POST["P_leiras"];
 		$P_megrendelo = $_POST["P_megrendelo"];
 		$P_hatarido = $_POST["P_hatarido"];
-		global $conn;
+//		global $conn;
+		$conn = OpenSQLConn();
 		$sql = "INSERT INTO projektek(p_nev, p_leiras, p_megrendelo, p_hatarido)
                 VALUES (?, ?, ?,?)";
 		$stmt = $conn->prepare($sql);
@@ -15,7 +16,7 @@ if (isset($_POST["Elkuld"])) {
 		$Execute = $stmt->execute();
 		if ($Execute) {
 			echo '<script>window.alert("Az új projekt elmentése sikerült!")</script>';
-			echo '<script>window.open("ProjektOlvas.php?id=Frissitett", "_self")</script>';
+			echo '<script>window.open("index.php?modul=projects&funkcio=lista", "_self")</script>';
 			//Megnyitaja a masik oldalt, ami listazza a meglevo projekteket
 		}
 	}
@@ -27,50 +28,24 @@ if (isset($_POST["Elkuld"])) {
 }elseif (isset($_POST["Megsem"])) {
 	echo '<script>window.open("ProjektOlvas.php?id=ValtozatlanLista", "_self")</script>';
 }
-?>
-
-<!--Ez most csak annyit tud, hogy be lehet gepelni a nevet, rovid leirasat, a megrendelot es a hataridot-->
-
-<!DOCTYPE>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Projekt hozzáadása</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-
-</head>
-
-<body>
-
-
+include_once("ProjektMenu.php");	?>
 <div class="">
-	<form class="" action="ProjektRogzit.php" method="post">
+	<form class="" action="index.php?modul=projects&funkcio=create" method="post">
 		<fieldset>
 			<span class="MezoInfo">Az új projekt neve:</span>
-			<br>
-			<input type="text" name="P_nev" value="">
+			<input type="text" name="P_nev" value=""><br>
 			<span class="MezoInfo">A projekt rövid leírása:</span>
-			<br>
-			<input type="text" name="P_leiras" value="">
+			<input type="text" name="P_leiras" value=""><br>
 			<span class="MezoInfo">Megrendelő:</span>
-			<br>
-            <input type="button" value="A megrendelő kiválasztása" name="MegbizoValaszto"
-                   onclick="location='../Megrendelok/MegrendeloKivalaszt.php'" class="MegrendeloValaszto"></input><br>
-<!--			<input type="text" name="P_megrendelo" value="">-->
+<!--            <input type="button" value="A megrendelő kiválasztása" name="MegbizoValaszto"-->
+<!--                   onclick="location='../Megrendelok/MegrendeloKivalaszt.php'" class="MegrendeloValaszto"></input><br>-->
+			<input type="text" name="P_megrendelo" value=""><br>
 			<span class="MezoInfo">Az új projekt határideje:</span>
 			<br>
 			<input type="date" name="P_hatarido" value="">
 			<br>
 			<input type="submit" name="Elkuld", value="Adatok elküldése">
-            <input type="submit" name="Megsem", value="Mégsem">
+<!--            <input type="submit" name="Megsem", value="Mégsem">-->
         </fieldset>
 	</form>
 </div>
-
-</body>
-
-</html>
-
-
-
-

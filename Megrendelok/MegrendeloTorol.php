@@ -19,20 +19,7 @@ if (isset($_POST["Elkuld"])) {
 }else if(isset($_POST["Megsem"])){
 	echo '<script>window.open("MegrendeloOlvas.php?id=Frissitett", "_self")</script>';
 }
-?>
 
-<!DOCTYPE>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>A kiválasztott megrendelő törlése</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-</head>
-<style media="screen">
-</style>
-
-<body>
-<?php
 global $conn;
 $sql = "SELECT * FROM megrendelok WHERE m_id = '$KeresoParameter'";
 $stmt = $conn->query($sql);
@@ -41,7 +28,6 @@ $M_nev = $Adatsorok["m_nev"];
 $M_cim = $Adatsorok["m_cim"];
 $M_elerhetoseg = $Adatsorok["m_elerhetoseg"];
 ?>
-
 <form class="" action="MegrendeloTorol.php?id=<?php echo $KeresoParameter; ?>" method="post">
 	<table width="1000" border="4" align="center">
 		<caption>A kiválasztott megrendelő</caption>
@@ -61,8 +47,3 @@ $M_elerhetoseg = $Adatsorok["m_elerhetoseg"];
 		<input type="submit" name="Megsem", value="Mégsem">
     </div>
 </form>
-
-</body>
-</html>
-
-

@@ -1,26 +1,13 @@
 <?php
-require_once("../inc/database_controller_gy.php");
+require_once("inc/database_controller_gy.php");
 //require_once("inc/database_controller_gy.php");
 
 if (isset($_POST["Vissza"])) {
-	echo '<script>window.open("../index.php", "_self")</script>';
+	echo '<script>window.open("index.php", "_self")</script>';
 } elseif (isset($_POST["Rogzit"])) {
 	echo '<script>window.open("./MegrendeloRogzit.php?id=UjMegrendeloHozzaadasa", "_self")</script>';
 }
-
 ?>
-<!--Egy tablazatban kiirja a Megrendelok adatbazisban szereplo megrendeloket, illetve egy-egy gombot a szerkeszteshez-->
-<!--es a torleshez-->
-
-<!DOCTYPE>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Megrendelők megtekintése</title>
-	<link rel="stylesheet" type="text/css" href="../Dizajn/projekterCSS.css">
-</head>
-
-<body>
 <table width="1000" border="4" align="center">
 	<caption>Az adatbázisban szereplő megrendelők</caption>
 	<tr>
@@ -53,15 +40,7 @@ if (isset($_POST["Vissza"])) {
 	<?php } ?>
 </table>
 <div>
-	<form class="" action="MegrendeloOlvas.php" method="post">
-		<input type="submit" name="Vissza" value="Vissza a főoldalra">
-		<input type="submit" name="Rogzit" value="Új megrendelo hozzáadása"> <!-- Uj -->
-	</form>
-
-</body>
-
-
-</html>
-
-
-
+<form class="" action="MegrendeloOlvas.php" method="post">
+	<input type="submit" name="Vissza" value="Vissza a főoldalra">
+	<input type="submit" name="Rogzit" value="Új megrendelo hozzáadása">
+</form>

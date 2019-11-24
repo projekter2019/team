@@ -1,5 +1,4 @@
 <?php
-
 #Open a connection to the MySQL database with the username, password and database name specified
 function openSQLConn(){
 	$conn = mysqli_connect("localhost", "penzkorh_proj", "Proj3ct3r", "penzkorh_projekter");
@@ -19,5 +18,3 @@ function openSQLConn(){
 function closeSQLConn($conn){
 	mysqli_close($conn);
 }
-
-?>

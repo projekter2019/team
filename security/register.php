@@ -23,5 +23,3 @@ function registerFromPOST(){
 	
 	mysqli_close($conn);
 }
-
-?>

@@ -1,4 +1,3 @@
-
 <?php
 	include_once("inc/database_controller.php");
 	include_once("security/encrypt.php");
