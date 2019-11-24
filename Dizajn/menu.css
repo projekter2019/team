@@ -14,22 +14,19 @@
 	border-radius: 10px;
 	list-style: none;
 	position: relative;
-	display: inline-block;
+	display: flex;
 /*	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	background: -webkit-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
 	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);*/
-	
+	box-shadow: 0px 2px 7px grey;
     /*height: 40px;*/
-    background-color: #5c69ff;
-    border: 5px solid;
-    border-bottom-left-radius: 35px;
-    border-bottom-right-radius: 35px;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-    border-color: rgb(221,216,212);
+    background-color: #6c7ae0;
+    border: 10px;
     font-weight: bold;
     margin: 3px;	
+	margin-bottom: 0px;
+	z-index: 1;
 	
 }
 
